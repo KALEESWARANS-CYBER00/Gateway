@@ -1,0 +1,14 @@
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/config/SecurityConfig.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/service/AuthService.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/dto/AuthRequest.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/security/JwtUtil.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/repository/UserRepository.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/service/JwtService.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/service/CustomUserDetailsService.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/model/User.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/config/JwtAuthFilter.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/dto/AuthResponse.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/controller/RootController.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/GatewayBackendApplication.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/controller/AuthController.java
+/workspaces/Gateway/gateway-backend/src/main/java/com/gateway/auth/model/Role.java
