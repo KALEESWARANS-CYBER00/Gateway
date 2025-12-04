@@ -1,0 +1,731 @@
+/* ============================================
+   AUTHIFY - HACKER/CYBERSECURITY THEME
+   Matte Black & White with Matrix Effects
+   ============================================ */
+
+/* Matrix Rain Animation */
+@keyframes matrixRain {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* Scan Line Effect */
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.2),
+            0 0 10px rgba(0, 255, 0, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.4),
+            0 0 30px rgba(0, 255, 0, 0.2);
+    }
+}
+
+/* Typing Cursor */
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Container */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Matrix Background Effect */
+.auth-container::before {
+    content: '01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: rgba(0, 255, 0, 0.05);
+    word-wrap: break-word;
+    line-height: 1.5;
+    animation: matrixRain 15s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Scan Line Overlay */
+.auth-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(transparent, rgba(0, 255, 0, 0.3), transparent);
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Grid Background */
+.auth-container {
+    background-image:
+        linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Main Content Layout with Two Columns */
+.auth-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 450px 1fr;
+    gap: 3rem;
+    max-width: 1400px;
+    width: 100%;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+}
+
+/* Cyber Awareness Sidebar (Left) */
+.cyber-awareness-left,
+.cyber-awareness-right {
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.cyber-awareness-right {
+    animation: fadeInRight 1s ease-out;
+}
+
+.awareness-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.awareness-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.awareness-card:hover::before {
+    left: 100%;
+}
+
+.awareness-card:hover {
+    border-color: rgba(0, 255, 0, 0.6);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.awareness-card h3 {
+    color: #00ff00;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.awareness-card h3::before {
+    content: '▶';
+    color: #00ff00;
+    font-size: 0.8rem;
+}
+
+.awareness-card p {
+    color: rgba(0, 255, 0, 0.8);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.awareness-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.awareness-card li {
+    color: rgba(0, 255, 0, 0.7);
+    font-size: 0.85rem;
+    padding: 0.25rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.awareness-card li::before {
+    content: '>';
+    position: absolute;
+    left: 0.5rem;
+    color: #00ff00;
+}
+
+.awareness-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+    filter: grayscale(100%) contrast(1.2);
+    transition: all 0.3s ease;
+}
+
+.awareness-card:hover .awareness-image {
+    opacity: 0.9;
+    filter: grayscale(100%) contrast(1.4);
+}
+
+/* Auth Card (Center Column) */
+.auth-card {
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid rgba(0, 255, 0, 0.4);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow:
+        0 0 30px rgba(0, 255, 0, 0.1),
+        inset 0 0 20px rgba(0, 255, 0, 0.02);
+    position: relative;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+/* Corner Brackets */
+.auth-card::before,
+.auth-card::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00ff00;
+}
+
+.auth-card::before {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.auth-card::after {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+
+.auth-card:hover {
+    border-color: rgba(0, 255, 0, 0.7);
+    box-shadow:
+        0 0 40px rgba(0, 255, 0, 0.2),
+        inset 0 0 30px rgba(0, 255, 0, 0.03);
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo */
+.auth-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.auth-logo img {
+    width: 64px;
+    height: 64px;
+    /* Remove filter that may invert colors */
+    filter: none;
+    /* Ensure image is displayed */
+    display: block;
+    margin: 0 auto;
+}
+
+
+.auth-logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    letter-spacing: 0.1em;
+}
+
+/* Terminal-style typing effect */
+.auth-logo-text::after {
+    content: '_';
+    animation: blink 1s infinite;
+}
+
+/* Headers */
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-out 0.2s both;
+}
+
+.auth-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.auth-header p {
+    color: rgba(0, 255, 0, 0.7);
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+}
+
+/* Form */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Form Groups - Staggered Animation */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    animation: slideInTerminal 0.5s ease-out backwards;
+}
+
+.form-group:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.form-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.form-group:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.form-group:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes slideInTerminal {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Labels - Terminal Style */
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+}
+
+.form-group label::before {
+    content: '> ';
+    color: #00ff00;
+}
+
+.form-group:focus-within label {
+    color: #00ff00;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+/* Inputs - Matrix Terminal Style */
+.form-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 4px;
+    color: #00ff00;
+    font-size: 0.95rem;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.form-input::placeholder {
+    color: rgba(0, 255, 0, 0.3);
+}
+
+.form-input:hover {
+    border-color: rgba(0, 255, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #00ff00;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow:
+        0 0 0 2px rgba(0, 255, 0, 0.1),
+        0 0 10px rgba(0, 255, 0, 0.2);
+    transform: translateX(2px);
+}
+
+.form-input:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Input with Action */
+.input-with-action {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-action .form-input {
+    padding-right: 3rem;
+}
+
+.input-with-action .btn-icon {
+    position: absolute;
+    right: 0.5rem;
+    background: transparent;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    color: #00ff00;
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.input-with-action .btn-icon:hover {
+    border-color: #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+/* Buttons - Hacker Style */
+.btn {
+    padding: 0.875rem 1.5rem;
+    border: 2px solid #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: rgba(0, 255, 0, 0.15);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background: rgba(0, 255, 0, 0.25);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+    transform: none;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-text {
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.btn-text:hover {
+    text-decoration-color: #00ff00;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+/* Spinner - Matrix Style */
+.spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(0, 255, 0, 0.2);
+    border-top-color: #00ff00;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Footer */
+.auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 255, 0, 0.2);
+    color: rgba(0, 255, 0, 0.6);
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+}
+
+.auth-footer a {
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.auth-footer a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #00ff00;
+    transition: width 0.3s ease;
+}
+
+.auth-footer a:hover::after {
+    width: 100%;
+}
+
+.auth-footer a:hover {
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+/* Responsive - Stack on Mobile */
+@media (max-width: 1024px) {
+    .auth-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .cyber-awareness-left,
+    .cyber-awareness-right {
+        display: none;
+    }
+
+    .auth-card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .auth-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .auth-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .auth-logo-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* Accessibility */
+*:focus-visible {
+    outline: 2px solid #00ff00;
+    outline-offset: 2px;
+}
+
+::selection {
+    background: rgba(0, 255, 0, 0.3);
+    color: #000000;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
