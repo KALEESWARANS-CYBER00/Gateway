@@ -1,2 +1,57 @@
-/target/
+# ===== AUTHIFY .gitignore =====
+
+# Backend (Maven/Spring Boot)
 gateway-backend/target/
+gateway-backend/*.iml
+gateway-backend/.idea/
+gateway-backend/.settings/
+gateway-backend/.classpath
+gateway-backend/.project
+
+# Frontend (React/Node)
+gateway-frontend/node_modules/
+gateway-frontend/build/
+gateway-frontend/.env.local
+gateway-frontend/.env.development.local
+gateway-frontend/.env.production.local
+gateway-frontend/package-lock.json
+
+# IDE Files
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Sensitive Data
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets/
+
+# Temporary Files
+*.tmp
+*.temp
+.cache/
+
+# Test Coverage
+coverage/
+.nyc_output/
+
+# Database
+*.db
+*.sqlite
+
+# User-specific files
+.agent/
